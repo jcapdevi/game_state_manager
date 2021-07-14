@@ -1,17 +1,7 @@
-const AuthForm = ({ user, onChange, onSubmit }) => {
+const LoginForm = ({ user, onChange, onSubmit }) => {
   return (
     <div>
       <form onSubmit={onSubmit} autoComplete="off">
-        <div>
-          <label>First Name</label>
-          <br />
-          <input type="text" id="first-name-input" value={user.firstName} onChange={onChange} name="firstName" required />
-        </div>
-        <div>
-          <label>last Name</label>
-          <br />
-          <input type="text" id="last-name-input" value={user.lastName} onChange={onChange} name="lastName" required />
-        </div>
         <div>
           <label>Email</label>
           <br />
@@ -31,4 +21,4 @@ const AuthForm = ({ user, onChange, onSubmit }) => {
   );
 };
 
-export default AuthForm;
+export default LoginForm;

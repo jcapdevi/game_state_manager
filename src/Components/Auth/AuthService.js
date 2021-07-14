@@ -14,6 +14,17 @@ export const createUser = (newUser) => {
     return newUserSaved;
   })
   .catch((error) => {
-    alert(`Error: ${error.message}`);
+    alert(`Error while creating user: ${error.message}`);
   });
 };
+
+export const loginUser = (userCreds) => {
+  console.log("Attempting to log in: ", userCreds);
+
+  return Parse.User.logIn(userCreds.email, userCreds.password).then((user) => {
+    return user;
+  })
+  .catch((error) => {
+    alert(`Error while logging in: ${error.message}`);
+  });
+}

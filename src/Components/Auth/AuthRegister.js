@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthService";
-import AuthForm from "./AuthForm";
+import RegisterForm from "./RegisterForm";
 
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState ({
@@ -18,7 +18,7 @@ const AuthRegister = () => {
     if (newUser && add) {
       createUser(newUser).then((userCreated) => {
         if (userCreated) {
-          alert(`${userCreated.get('firstName')}, you successfully registered!`)
+          alert(`${userCreated.get('firstName')}, you have successfully registered!`)
         }
       });
     }
@@ -40,7 +40,7 @@ const AuthRegister = () => {
 
   return (
     <div>
-      <AuthForm
+      <RegisterForm
       user={newUser}
       onChange={onChangeHandler}
       onSubmit={onSubmitHandler}/>
