@@ -27,7 +27,7 @@ const AuthLogin = () => {
     console.log(e.target);
     const { name, value: newValue } = e.target;
     console.log(newValue);
-    setNewUser( {...userCreds, [name]: newValue} );
+    setUserCreds( {...userCreds, [name]: newValue} );
   };
 
   // Sets go flag to start logging in when form is submitted
