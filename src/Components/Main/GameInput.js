@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const GameInput = () => {
   return (
@@ -32,6 +33,12 @@ const GameInput = () => {
       <input type="text" id="c3" name="board" maxLength="1" size="1" />
       <br /><br />
       <button type="submit" name="button">Submit</button>
+      <br /><br />
+      <hr />
+      <br /><br />
+      <Link to="/ViewSelector">
+        <p>View Saved Games</p>
+      </Link>
     </form>
   );
 };
