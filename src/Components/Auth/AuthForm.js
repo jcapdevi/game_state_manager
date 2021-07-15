@@ -1,5 +1,5 @@
 const AuthForm = ({ user, onChange, onSubmit, mode}) => {
-  if (mode == "login") {
+  if (mode === "login") {
     return (
       <div>
         <form onSubmit={onSubmit} autoComplete="off">
@@ -21,7 +21,7 @@ const AuthForm = ({ user, onChange, onSubmit, mode}) => {
       </div>
     );
   }
-  else if (mode == "register") {
+  else if (mode === "register") {
     return (
       <div>
         <form onSubmit={onSubmit} autoComplete="off">
