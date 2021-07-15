@@ -1,6 +1,6 @@
 import React from "react";
-import GameInput from "./Main/GameInput.js"
-import ViewSelector from "./Main/ViewSelector.js"
+import GameInput from "./Main/GameInput"
+import ViewSelector from "./Main/ViewSelector"
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import AuthModule from "./Auth/Auth";
 import AuthRegister from "./Auth/AuthRegister";
