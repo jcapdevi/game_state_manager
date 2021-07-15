@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom"
 import { createUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 
@@ -12,6 +13,9 @@ const AuthRegister = () => {
 
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+
 
   // useEffect will run when changes are made to the state variable
   useEffect(() => {
@@ -21,6 +25,7 @@ const AuthRegister = () => {
           alert(`${userCreated.get('firstName')}, you have successfully registered!`)
         }
         setAdd(false)
+        setSuccess(true)
       });
     }
   },[newUser, add]);
@@ -46,6 +51,10 @@ const AuthRegister = () => {
       onChange={onChangeHandler}
       onSubmit={onSubmitHandler}
       mode="register"/>
+
+      { success ? (
+        <Redirect to="/GameInput"></Redirect>
+      ) : null }
     </div>
   );
 };

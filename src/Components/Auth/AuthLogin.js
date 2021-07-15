@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom"
 import { loginUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 
@@ -9,6 +10,7 @@ const AuthLogin = () => {
   });
 
   const [go, setGo] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   // Attempts to log user in when go flag is set and user credentials have been entered
   useEffect(() => {
@@ -18,6 +20,7 @@ const AuthLogin = () => {
           alert(`${user.get('firstName')}, you have successfully logged in!`)
         }
         setGo(false)
+        setSuccess(true)
       });
     }
   },[userCreds, go]);
@@ -45,6 +48,10 @@ const AuthLogin = () => {
       onChange={onChangeHandler}
       onSubmit={onSubmitHandler}
       mode="login"/>
+
+      { success ? (
+        <Redirect to="/GameInput"></Redirect>
+      ) : null }
     </div>
   )
 

@@ -31,7 +31,7 @@ const AuthForm = ({ user, onChange, onSubmit, mode}) => {
             <input type="text" id="first-name-input" value={user.firstName} onChange={onChange} name="firstName" required />
           </div>
           <div>
-            <label>last Name</label>
+            <label>Last Name</label>
             <br />
             <input type="text" id="last-name-input" value={user.lastName} onChange={onChange} name="lastName" required />
           </div>
