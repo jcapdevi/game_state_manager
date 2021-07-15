@@ -20,6 +20,7 @@ const AuthRegister = () => {
         if (userCreated) {
           alert(`${userCreated.get('firstName')}, you have successfully registered!`)
         }
+        setAdd(false)
       });
     }
   },[newUser, add]);

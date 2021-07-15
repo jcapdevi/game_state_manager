@@ -17,6 +17,7 @@ const AuthLogin = () => {
         if (user) {
           alert(`${user.get('firstName')}, you have successfully logged in!`)
         }
+        setGo(false)
       });
     }
   },[userCreds, go]);
