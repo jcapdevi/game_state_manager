@@ -18,9 +18,9 @@ const AuthLogin = () => {
       loginUser(userCreds).then((user) => {
         if (user) {
           alert(`${user.get('firstName')}, you have successfully logged in!`)
+          setSuccess(true)
         }
         setGo(false)
-        setSuccess(true)
       });
     }
   },[userCreds, go]);
