@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthService";
-import RegisterForm from "./RegisterForm";
+import AuthForm from "./AuthForm";
 
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState ({
@@ -40,10 +40,11 @@ const AuthRegister = () => {
 
   return (
     <div>
-      <RegisterForm
+      <AuthForm
       user={newUser}
       onChange={onChangeHandler}
-      onSubmit={onSubmitHandler}/>
+      onSubmit={onSubmitHandler}
+      mode="register"/>
     </div>
   );
 };

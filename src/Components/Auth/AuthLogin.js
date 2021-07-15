@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { loginUser } from "./AuthService";
-import LoginForm from "./LoginForm";
+import AuthForm from "./AuthForm";
 
 const AuthLogin = () => {
   const [userCreds, setUserCreds] = useState ({
@@ -39,10 +39,11 @@ const AuthLogin = () => {
 
   return (
     <div>
-      <LoginForm
+      <AuthForm
       user={userCreds}
       onChange={onChangeHandler}
-      onSubmit={onSubmitHandler}/>
+      onSubmit={onSubmitHandler}
+      mode="login"/>
     </div>
   )
 
