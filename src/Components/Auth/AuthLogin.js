@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom"
 import { loginUser } from "./AuthService";
 import AuthForm from "./AuthForm";
+import Parse from "parse"
+import LoggedIn from "../../Services/LoggedIn"
 
 const AuthLogin = () => {
   const [userCreds, setUserCreds] = useState ({
@@ -43,6 +45,14 @@ const AuthLogin = () => {
 
   return (
     <div>
+      <div>
+        <LoggedIn
+          exact
+          path="/login"
+          flag = {!Parse.User.current()}
+          component = {AuthLogin}
+        />
+      </div>
       <AuthForm
       user={userCreds}
       onChange={onChangeHandler}

@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
+import Parse from "parse"
+import LoggedIn from "../../Services/LoggedIn"
 
 const AuthModule = () => {
   return (
     <div>
+      <div>
+        <LoggedIn
+          exact
+          path="/auth"
+          flag = {!Parse.User.current()}
+          component = {AuthModule}
+        />
+      </div>
       <Link to="/register">
         <button>Register</button>
       </Link>

@@ -25,7 +25,7 @@ const ViewSelector = () => {
         <ProtectedRoute
           exact
           path="/ViewSelector"
-          flag = {Parse.User.current().authenticated()}
+          flag = {Parse.User.current()}
           component = {ViewSelector}
         />
       </div>

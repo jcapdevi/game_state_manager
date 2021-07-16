@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
-import Parse from "parse";
+import Parse from "parse"
 
 const GameInput = () => {
   console.log(Parse.User.current())
@@ -11,7 +11,7 @@ const GameInput = () => {
         <ProtectedRoute
           exact
           path="/GameInput"
-          flag = {Parse.User.current().authenticated()}
+          flag = {Parse.User.current()}
           component = {GameInput}
         />
       </div>
