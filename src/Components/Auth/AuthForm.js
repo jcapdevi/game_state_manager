@@ -1,3 +1,5 @@
+// Form for AuthLogin and AuthRegister
+
 const AuthForm = ({ user, onChange, onSubmit, mode}) => {
   if (mode === "login") {
     return (

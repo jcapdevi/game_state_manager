@@ -1,5 +1,7 @@
 import Parse from "parse";
 
+// This service provides wrappers for the parse methods for creating a user and logging in
+
 export const createUser = (newUser) => {
   const user = new Parse.User();
   user.set("username", newUser.email);

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Parse from "parse"
 import LoggedIn from "../../Services/LoggedIn"
 
+// Landing page
+
 const AuthModule = () => {
   return (
     <div>

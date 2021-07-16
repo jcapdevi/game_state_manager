@@ -5,6 +5,8 @@ import AuthForm from "./AuthForm";
 import Parse from "parse"
 import LoggedIn from "../../Services/LoggedIn"
 
+// Component for registering a new user
+
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState ({
     firstName: "",

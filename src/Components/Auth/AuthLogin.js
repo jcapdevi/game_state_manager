@@ -5,6 +5,8 @@ import AuthForm from "./AuthForm";
 import Parse from "parse"
 import LoggedIn from "../../Services/LoggedIn"
 
+// Componenet for logging in with existing user credentials
+
 const AuthLogin = () => {
   const [userCreds, setUserCreds] = useState ({
     email:"",
