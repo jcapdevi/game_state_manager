@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { getAllGames} from "../../Services/LearnService.js"; //, getById, createGame, removeGame
-import { ViewSelectorMapper } from "./ViewSelectorMapper.js"
+import { getAllGames, getById } from "../../Services/LearnService.js";
+import ViewSelectorMapper from "./ViewSelectorMapper"
+import DisplaySelection from "./DisplaySelection"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse";
 
 const ViewSelector = () => {
   const [games, setGames] = useState([]);
+  const [formData, setFormData] = useState("")
+  const [go, setGo] = useState(false)
+  const [display, setDisplay] = useState(false)
+  const [game, setGame] = useState(null)
+
 
   useEffect(() => {
     getAllGames().then((games) => {
@@ -19,6 +25,33 @@ const ViewSelector = () => {
     // })
   }, []);
 
+  //  Updates user credentials to match form
+  const onChangeHandler = (e) => {
+    e.preventDefault();
+    const {value: newValue } = e.target
+    console.log('Game Selected:', e.target);
+    setFormData(newValue);
+    setGo(false)
+    setDisplay(false)
+  };
+
+  // Sets go flag when form is submitted
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log('submitted: ', e.target);
+    setGo(true);
+  }
+
+  // Gets data and sets display flag whenever new data is submitted
+  useEffect(() => {
+    if (formData && go) {
+      getById(formData).then((game) => {
+        setGame(game)
+        setDisplay(true)
+      })
+    }
+  },[formData, go]);
+
   return (
     <div className="viewselector">
       <div>
@@ -30,16 +63,38 @@ const ViewSelector = () => {
         />
       </div>
 
-      <h1>View Saved Games</h1>
-      <p>Choose a saved game from the drop down menu to view it.</p>
-      <hr />
-      <ViewSelectorMapper options={games}/>
-      <br /><br />
-      <hr />
-      <br /><br />
-      <Link to="/GameInput">
-        <p>Save a Game</p>
-      </Link>
+      <div>
+        <h1>View Saved Games</h1>
+        <p>Choose a saved game from the drop down menu to view it.</p>
+        <hr />
+        <br />
+        <ViewSelectorMapper
+          options={games}
+          onChange={onChangeHandler}
+          onSubmit={onSubmitHandler}/>
+        <br />
+        <hr />
+      </div>
+
+      <div>
+        { display ? (
+          <div>
+            <DisplaySelection selection={game} />
+            <br />
+            <hr />
+          </div>
+        ) : null }
+      </div>
+
+      <div>
+        <h3>Navigation:</h3>
+        <Link to="/UserInfo">
+          <p>User Info</p>
+        </Link>
+        <Link to="/GameInput">
+          <p>Save a Game</p>
+        </Link>
+      </div>
     </div>
   );
 };
