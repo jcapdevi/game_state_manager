@@ -4,7 +4,7 @@ import ViewSelectorMapper from "./ViewSelectorMapper"
 import DisplaySelection from "./DisplaySelection"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
-import Parse from "parse";
+import Parse from "parse"
 
 const ViewSelector = () => {
   const [games, setGames] = useState([]);
