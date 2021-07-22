@@ -1,5 +1,7 @@
 import React from "react";
 
+// Selector Mapper for ViewSelector
+// dynamically builds form from database passed in
 const ViewSelectorMapper = ({ options, onChange, onSubmit }) => {
   console.log(options)
   return (

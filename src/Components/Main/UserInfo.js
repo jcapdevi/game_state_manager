@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
 
+// User Info Page
 const UserInfo = () => {
   console.log(Parse.User.current())
   return (
@@ -16,6 +17,7 @@ const UserInfo = () => {
         />
       </div>
 
+      // Get and Display User Info from Current User
       <div>
         <h1>User Info</h1>
         <hr />

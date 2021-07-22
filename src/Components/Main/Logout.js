@@ -4,6 +4,7 @@ import ProtectedRoute from "../../Services/ProtectedRoutes"
 import LogoutService from "./../../Services/LogoutService"
 import { Redirect} from "react-router-dom"
 
+// Logout Page
 const Logout = () => {
   console.log(Parse.User.current());
   const [logout, setLogout] = useState(false);
@@ -28,6 +29,7 @@ const Logout = () => {
         />
       </div>
 
+      // Get Confirmation
       <div>
         <h3>Are you sure you want to log out?</h3>
         <form>
@@ -36,12 +38,14 @@ const Logout = () => {
         </form>
       </div>
 
+      // Log out if confirmed
       <div>
         { logout ? (
           <LogoutService />
         ) : null }
       </div>
 
+      // Return to site if denied
       <div>
         { goBack ? (
           <Redirect to="/GameInput" />

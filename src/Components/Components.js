@@ -14,13 +14,16 @@ const Components = () => {
     <div>
       <Router>
         <Switch>
+          //Auth
           <Route path="/auth" component={AuthModule} />
           <Route path="/register" component={AuthRegister} />
           <Route path="/login" component={AuthLogin} />
+          //Main Site
           <Route path="/GameInput" component={GameInput} />
           <Route path="/ViewSelector" component={ViewSelector} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/Logout" component={Logout} />
+          //Default
           <Redirect to="/auth" />
         </Switch>
       </Router>

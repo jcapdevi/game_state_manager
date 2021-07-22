@@ -7,13 +7,13 @@ import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
 
 const ViewSelector = () => {
-  const [games, setGames] = useState([]);
-  const [formData, setFormData] = useState("")
-  const [go, setGo] = useState(false)
-  const [display, setDisplay] = useState(false)
-  const [game, setGame] = useState(null)
+  const [games, setGames] = useState([]);         // Games to populate form
+  const [formData, setFormData] = useState("")    // Id of selected game
+  const [go, setGo] = useState(false)             // Flag to get data
+  const [display, setDisplay] = useState(false)   // Flag to display data
+  const [game, setGame] = useState(null)          // Object of selected game
 
-
+  // Get all games to populate form
   useEffect(() => {
     getAllGames().then((games) => {
       setGames(games);
@@ -59,6 +59,7 @@ const ViewSelector = () => {
         />
       </div>
 
+      // Get Selection
       <div>
         <h1>View Saved Games</h1>
         <p>Choose a saved game from the drop down menu to view it.</p>
@@ -72,6 +73,7 @@ const ViewSelector = () => {
         <hr />
       </div>
 
+      // Display Selected Game
       <div>
         { display ? (
           <div>

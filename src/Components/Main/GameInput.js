@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
 
+// Game Input Page
 const GameInput = () => {
   console.log(Parse.User.current())
   return (
@@ -16,6 +17,7 @@ const GameInput = () => {
         />
       </div>
 
+      //Get game data from user
       <div>
         <form>
           <h1>Save Your Game!</h1>
@@ -51,6 +53,8 @@ const GameInput = () => {
           <hr />
         </form>
       </div>
+
+      //TODO: Send data to Parse database
 
       <div>
         <h3>Navigation:</h3>
