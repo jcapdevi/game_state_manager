@@ -29,7 +29,7 @@ const Logout = () => {
       </div>
 
       <div>
-        <h3>Are you Sure you want to log out?</h3>
+        <h3>Are you sure you want to log out?</h3>
         <form>
           <button type="submit" onClick={logOutHandler}>Log Out</button>
           <button type="submit" onClick={goBackHandler}>Back to Site</button>
