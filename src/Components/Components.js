@@ -1,7 +1,7 @@
 import React from "react";
 import GameInput from "./Main/GameInput"
 import ViewSelector from "./Main/ViewSelector"
-import Userinfo from "./Main/UserInfo"
+import UserInfo from "./Main/UserInfo"
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import AuthModule from "./Auth/Auth";
 import AuthRegister from "./Auth/AuthRegister";
