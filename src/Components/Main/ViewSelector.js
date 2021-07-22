@@ -19,10 +19,6 @@ const ViewSelector = () => {
       setGames(games);
       console.log(games);
     });
-
-    // getById("IDc9LcMCnl").then((games) => {
-    //   setGames(games);
-    // })
   }, []);
 
   //  Updates user credentials to match form
