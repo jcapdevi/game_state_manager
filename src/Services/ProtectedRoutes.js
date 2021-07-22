@@ -7,23 +7,34 @@ const ProtectedRoute = ({ Component, flag, ...rest }) => {
 
   console.log("Protecting: Flag is ", flag)
 
+  // Alert Version: sends alert when in the wrong place
+  // Bug: Alert is sent twice
+  //
+  // if (flag) {
+  //   return (
+  //     <div>
+  //       <Redirect to={rest.path} />
+  //     </div>
+  //   )
+  // }
+  // else {
+  //   {/*alert("Not Authorized: Please Register or Log In")*/}
+  //   return (
+  //     <div>
+  //       <Redirect to="/auth" />
+  //     </div>
+  //   )
+  // };
 
-
-  if (flag) {
-    return (
-      <div>
+  return (
+    <div>
+      { flag ? (
         <Redirect to={rest.path} />
-      </div>
-    )
-  }
-  else {
-    {/*alert("Not Authorized: Please Register or Log In")*/}
-    return (
-      <div>
+      ) : (
         <Redirect to="/auth" />
-      </div>
-    )
-  };
+      )}
+    </div>
+  )
 };
 
 export default ProtectedRoute;

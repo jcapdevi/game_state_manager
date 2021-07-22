@@ -6,21 +6,34 @@ import { Redirect} from "react-router-dom";
 const LoggedIn = ({ Component, flag, ...rest }) => {
   console.log(rest); // show rest.path in the console
 
-  if (flag) {
-    return (
-      <div>
+  // Alert Version: sends alert when in the wrong place
+  // Bug: Alert is sent twice
+  //
+  // if (flag) {
+  //   return (
+  //     <div>
+  //       <Redirect to={rest.path} />
+  //     </div>
+  //   )
+  // }
+  // else {
+  //   alert("You are already logged in")
+  //   return (
+  //     <div>
+  //       <Redirect to="/GameInput" />
+  //     </div>
+  //   )
+  // };
+
+  return (
+    <div>
+      { flag ? (
         <Redirect to={rest.path} />
-      </div>
-    )
-  }
-  else {
-    {/*alert("You are already logged in")*/}
-    return (
-      <div>
+      ) : (
         <Redirect to="/GameInput" />
-      </div>
-    )
-  };
+      )}
+    </div>
+  )
 };
 
 export default LoggedIn;
