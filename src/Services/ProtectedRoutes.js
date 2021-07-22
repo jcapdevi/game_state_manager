@@ -17,7 +17,7 @@ const ProtectedRoute = ({ Component, flag, ...rest }) => {
     )
   }
   else {
-    alert("Not Authorized: Please Register or Log In")
+    {/*alert("Not Authorized: Please Register or Log In")*/}
     return (
       <div>
         <Redirect to="/auth" />

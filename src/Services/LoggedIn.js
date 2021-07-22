@@ -14,7 +14,7 @@ const LoggedIn = ({ Component, flag, ...rest }) => {
     )
   }
   else {
-    alert("You are already logged in")
+    {/*alert("You are already logged in")*/}
     return (
       <div>
         <Redirect to="/GameInput" />
