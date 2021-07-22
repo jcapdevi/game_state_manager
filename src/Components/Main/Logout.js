@@ -29,7 +29,7 @@ const Logout = () => {
         />
       </div>
 
-      // Get Confirmation
+      {/* Get Confirmation */}
       <div>
         <h3>Are you sure you want to log out?</h3>
         <form>
@@ -38,14 +38,14 @@ const Logout = () => {
         </form>
       </div>
 
-      // Log out if confirmed
+      {/* Log out if confirmed */}
       <div>
         { logout ? (
           <LogoutService />
         ) : null }
       </div>
 
-      // Return to site if denied
+      {/* Return to site if denied */}
       <div>
         { goBack ? (
           <Redirect to="/GameInput" />

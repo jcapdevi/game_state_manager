@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllGames, getById } from "../../Services/LearnService.js";
+import { getAllGames, getById } from "../../Services/DataService.js";
 import ViewSelectorMapper from "./ViewSelectorComponents/ViewSelectorMapper"
 import DisplaySelection from "./ViewSelectorComponents/DisplaySelection"
 import { Link } from "react-router-dom"
@@ -59,7 +59,7 @@ const ViewSelector = () => {
         />
       </div>
 
-      // Get Selection
+      {/* Get Selection */}
       <div>
         <h1>View Saved Games</h1>
         <p>Choose a saved game from the drop down menu to view it.</p>
@@ -73,7 +73,7 @@ const ViewSelector = () => {
         <hr />
       </div>
 
-      // Display Selected Game
+      {/* // Display Selected Game */}
       <div>
         { display ? (
           <div>

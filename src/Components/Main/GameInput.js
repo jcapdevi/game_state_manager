@@ -17,7 +17,7 @@ const GameInput = () => {
         />
       </div>
 
-      //Get game data from user
+      {/* Get game data from user */}
       <div>
         <form>
           <h1>Save Your Game!</h1>
@@ -54,7 +54,7 @@ const GameInput = () => {
         </form>
       </div>
 
-      //TODO: Send data to Parse database
+      {/* TODO: Send data to Parse database */}
 
       <div>
         <h3>Navigation:</h3>

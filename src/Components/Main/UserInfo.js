@@ -17,7 +17,7 @@ const UserInfo = () => {
         />
       </div>
 
-      // Get and Display User Info from Current User
+      {/* Get and Display User Info from Current User */}
       <div>
         <h1>User Info</h1>
         <hr />

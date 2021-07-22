@@ -12,7 +12,7 @@ const DisplaySelection = ({ selection }) => {
         <li>Player O: {selection.attributes.Player_y}</li>
         <li>Board: {selection.attributes.board}</li>
 
-        //TODO: Improve Board Display Method
+        {/* TODO: Improve Board Display Method */}
 
       </ul>
     </div>
