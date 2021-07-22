@@ -1,10 +1,12 @@
 import React from "react";
 import GameInput from "./Main/GameInput"
 import ViewSelector from "./Main/ViewSelector"
+import Userinfo from "./Main/UserInfo"
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import AuthModule from "./Auth/Auth";
 import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
+
 
 const Components = () => {
   return (
@@ -16,6 +18,7 @@ const Components = () => {
           <Route path="/login" component={AuthLogin} />
           <Route path="/GameInput" component={GameInput} />
           <Route path="/ViewSelector" component={ViewSelector} />
+          <Route path="/UserInfo" component={UserInfo} />
           <Redirect to="/auth" />
         </Switch>
       </Router>
