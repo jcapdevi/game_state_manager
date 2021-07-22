@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllGames, getById } from "../../Services/LearnService.js";
-import ViewSelectorMapper from "./ViewSelectorMapper"
-import DisplaySelection from "./DisplaySelection"
+import ViewSelectorMapper from "./ViewSelectorComponents/ViewSelectorMapper"
+import DisplaySelection from "./ViewSelectorComponents/DisplaySelection"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
