@@ -11,7 +11,6 @@ const ViewSelector = () => {
   useEffect(() => {
     getAllGames().then((games) => {
       setGames(games);
-      console.log(games);
     });
   }, []);
 

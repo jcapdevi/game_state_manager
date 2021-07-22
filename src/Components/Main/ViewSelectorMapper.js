@@ -1,45 +1,33 @@
-import React, { useReducer, useState } from "react";
-
-const formReducer = (state, e) => {
-  return {
-    ...state,
-    [e.name]: e.value
-  }
-}
+import React, { useState } from "react";
+import { ViewGame } from "./ViewGame.js"
 
 const ViewSelectorMapper = ({ options }) => {
-  const [formData, setFormData] = useReducer(formReducer, {})
   const [submitting, setSubmitting] = useState(false);
+  const [gameID, setGameID] = useState('');
+
   const handleSubmit = e => {
     e.preventDefault();
-    setSubmitting(true);
+    if (gameID == null) {
+      alert("Pick a game to view.");
+    }
+    else {
+      setSubmitting(true);
+    }
   }
 
   const handleChange = e => {
-    setFormData({
-      value: e.target.value,
-    });
+    setGameID(e.target.value);
   }
 
   return (
     <div>
-      {submitting &&
-        <div>
-          You requested the following game:
-          <ul>
-            {Object.entries(formData).map(([name, value]) => (
-              <li key={name}><strong>{name}</strong>:{value.toString()}</li>
-            ))}
-          </ul>
-        </div>
-      }
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <select defaultValue="-- select a saved game --" name="gameInput" onChange={handleChange}>
-            <option disabled>-- select a saved game --</option>
-            {options.map(
-              (option) =>
-                ( <option key={option.id} value={option.id}>
+          <select defaultValue="-- select a saved game --" name="game" onChange={handleChange}>
+            <option key="default" disabled>-- select a saved game --</option>
+            {options.length && options.map(
+              (option, index) =>
+                ( <option key={index} value={option.id}>
                   {option.attributes.Title}
                   </option>)
             )}
@@ -48,6 +36,11 @@ const ViewSelectorMapper = ({ options }) => {
           <button>Submit</button>
         </fieldset>
       </form>
+      {submitting &&
+        <div>
+          <ViewGame id={gameID} />
+        </div>
+      }
     </div>
   );
 };
