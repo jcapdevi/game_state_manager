@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import AuthModule from "./Auth/Auth";
 import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
+import Logout from "./Main/Logout";
 
 
 const Components = () => {
@@ -19,6 +20,7 @@ const Components = () => {
           <Route path="/GameInput" component={GameInput} />
           <Route path="/ViewSelector" component={ViewSelector} />
           <Route path="/UserInfo" component={UserInfo} />
+          <Route path="/Logout" component={Logout} />
           <Redirect to="/auth" />
         </Switch>
       </Router>

@@ -60,6 +60,9 @@ const GameInput = () => {
         <Link to="/ViewSelector">
           <p>View Saved Games</p>
         </Link>
+        <Link to="/Logout">
+          <p>Log Out</p>
+        </Link>
       </div>
     </div>
   );

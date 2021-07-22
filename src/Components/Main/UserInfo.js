@@ -24,10 +24,6 @@ const UserInfo = () => {
       </div>
 
       <div>
-        {/* TODO: Logout option here*/}
-      </div>
-
-      <div>
         <hr />
         <h3>Navigation:</h3>
         <Link to="/GameInput">
@@ -35,6 +31,9 @@ const UserInfo = () => {
         </Link>
         <Link to="/ViewSelector">
           <p>View Saved Games</p>
+        </Link>
+        <Link to="/Logout">
+          <p>Log Out</p>
         </Link>
       </div>
     </div>

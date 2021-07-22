@@ -94,6 +94,9 @@ const ViewSelector = () => {
         <Link to="/GameInput">
           <p>Save a Game</p>
         </Link>
+        <Link to="/Logout">
+          <p>Log Out</p>
+        </Link>
       </div>
     </div>
   );
