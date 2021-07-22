@@ -41,7 +41,7 @@ const AuthLogin = () => {
   // Sets go flag to start logging in when form is submitted
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log('submitted: ', e.target);
+    console.log('submitted: ', e.target, userCreds);
     setGo(true);
   }
 
