@@ -104,7 +104,6 @@ const ViewGame = ({ id }) => {
         <div class="editform">
           <form id="form" onSubmit={handleSubmit}>
             <label htmlFor="title"><strong>Edit Title: </strong></label>
-            <input type="text" id="player-o" name="player-o" onChange={handleChange} maxLength="15" />
             <input type="text" id="title" name="title" defaultValue={games[1]}  onChange={handleChange} maxLength="15" /><br />
             <label htmlFor="player_x"><strong>Edit Player X: </strong></label>
             <input type="text" id="player_x" name="player_x" defaultValue={games[2]} onChange={handleChange} maxLength="15" /><br />
