@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.4.1] - 2021-07-23
 - Added Functionality to Save Game form
+- Some reorganization to fix bugs
 
 ## [0.4.0] - 2021-07-22
 - Added Logout
