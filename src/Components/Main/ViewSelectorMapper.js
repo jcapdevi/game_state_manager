@@ -1,27 +1,30 @@
 import React, { useState } from "react";
 import { ViewGame } from "./ViewGame.js"
+import '../../Styling/ViewSelectorMapper.css'
 
 const ViewSelectorMapper = ({ options }) => {
   const [submitting, setSubmitting] = useState(false);
-  const [gameID, setGameID] = useState('');
+  const [tempGameID, setTempGameID] = useState(null);
+  const [gameID, setGameID] = useState(null);
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (gameID == null) {
+    if (tempGameID == null) {
       alert("Pick a game to view.");
     }
     else {
+      setGameID(tempGameID);
       setSubmitting(true);
     }
   }
 
   const handleChange = e => {
-    setGameID(e.target.value);
+    setTempGameID(e.target.value);
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div id="select">
+      <form onSubmit={handleSubmit} id="form">
         <fieldset>
           <select defaultValue="-- select a saved game --" name="game" onChange={handleChange}>
             <option key="default" disabled>-- select a saved game --</option>
@@ -32,8 +35,7 @@ const ViewSelectorMapper = ({ options }) => {
                   </option>)
             )}
           </select>
-          <br /><br />
-          <button>Submit</button>
+          <button id="submit">Submit</button>
         </fieldset>
       </form>
       {submitting &&

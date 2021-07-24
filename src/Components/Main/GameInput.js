@@ -4,7 +4,6 @@ import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
 
 const GameInput = () => {
-  console.log(Parse.User.current())
   return (
     <div>
       <div>

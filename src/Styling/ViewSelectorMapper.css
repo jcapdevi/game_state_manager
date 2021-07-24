@@ -1,0 +1,14 @@
+fieldset {
+  border: none;
+}
+
+#form {
+  width: 288px;
+  margin-top: -5px;
+  margin-left: 34.5%;
+  border-bottom: 2px solid #023e8a;
+}
+
+#submit {
+  margin-left: 30px;
+}

@@ -4,18 +4,21 @@ import { ViewSelectorMapper } from "./ViewSelectorMapper.js"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse";
+import '../../Styling/ViewSelector.css'
 
 const ViewSelector = () => {
   const [games, setGames] = useState([]);
+  const [numGames, setNumGames] = useState();
 
   useEffect(() => {
     getAllGames().then((games) => {
       setGames(games);
+      setNumGames(games.length);
     });
   }, []);
 
   return (
-    <div className="viewselector">
+    <div className="viewselector" id="vs">
       <div>
         <ProtectedRoute
           exact
@@ -26,11 +29,9 @@ const ViewSelector = () => {
       </div>
 
       <h1>View Saved Games</h1>
-      <p>Choose a saved game from the drop down menu to view it.</p>
-      <hr />
+      <p id="desc">Choose a saved game from the drop down menu to view it.</p>
       <ViewSelectorMapper options={games}/>
       <br /><br />
-      <hr />
       <br /><br />
       <Link to="/GameInput">
         <p>Save a Game</p>
