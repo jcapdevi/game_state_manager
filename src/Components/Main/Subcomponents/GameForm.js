@@ -21,7 +21,7 @@ const GameForm = ({ game, onChange, onSubmit }) => {
         <label htmlFor="player-o">Name of Player O: </label>
         <input type="text" id="player-o" name="Player_y"  value={game.Player_y} onChange={onChange} />
         <br />
-        <p>Enter current game-state:</p>
+        <p>Enter current game-state (e represents an empty space):</p>
         <input type="text" id="a1" name="A1" maxLength="1" size="1" value={game.A1} onChange={onChange} />
         <input type="text" id="a2" name="A2" maxLength="1" size="1" value={game.A2} onChange={onChange} />
         <input type="text" id="a3" name="A3" maxLength="1" size="1" value={game.A3} onChange={onChange} />
