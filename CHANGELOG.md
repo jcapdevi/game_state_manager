@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Added CSS to Save a Game Page
 
 ## [0.4.0] - 2021-07-22
+- Added the ability to view games
 - Added the ability to delete games
 - Added CSS to View Saved Games Page
 
