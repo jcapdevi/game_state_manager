@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [0.4.0] - 2021-07-22
 - Added the ability to view games
 - Added the ability to delete games
+- Added a UI for the game to be viewed
 - Added CSS to View Saved Games Page
 
 ## [0.3.0] - 2021-07-16
