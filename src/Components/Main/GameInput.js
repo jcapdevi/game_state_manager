@@ -1,35 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import Parse from "parse"
-import Gameform from "./Subcomponents/GameForm"
+import GameForm from "./Subcomponents/GameForm"
+import { createGame } from "./../../Services/DataService"
 
-const [newGame, setNewGame] = useState({
-  Title:"",
-  Template:"-- select an option --",
-  Player_x:"",
-  Player_y:"",
-  board:["e", "e", "e", "e", "e", "e", "e", "e", "e"]
-});
-
-const [add, setAdd] = useState(false);
-
-const onChangeHandler = (e) => {
-  e.preventDefault();
-  console.log(e.target);
-  const { name, value: newValue } = e.target;
-  console.log(newValue);
-  setNewGame( {...newGame, [name]: newValue} );
-};
-
-const onSubmitHandler = (e) => {
-  e.preventDefault();
-  console.log('submitted: ', e.target);
-  setAdd(true);
-}
 
 // Game Input Page
 const GameInput = () => {
+  const [newGame, setNewGame] = useState({
+    Title:"",
+    Template:"-- select an option --",
+    Player_x:"",
+    Player_y:"",
+    A1:"e",
+    A2:"e",
+    A3:"e",
+    B1:"e",
+    B2:"e",
+    B3:"e",
+    C1:"e",
+    C2:"e",
+    C3:"e"
+  });
+
+  const [add, setAdd] = useState(false);
+
+  const onChangeHandler = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const { name, value: newValue } = e.target;
+    console.log(newValue);
+    setNewGame( {...newGame, [name]: newValue} );
+    console.log('updated', newGame)
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log('submitted: ', e.target);
+    setAdd(true);
+  }
+
+  // useEffect will run when changes are made to the state variable
+  useEffect(() => {
+    if (newGame && add) {
+      createGame(newGame).then((newGame) => {
+        if (newGame) {
+          alert(`${newGame.Title} has been successfully saved!`)
+        }
+        setAdd(false)
+      });
+    }
+  },[newGame, add]);
+
   console.log(Parse.User.current())
   return (
     <div>
