@@ -38,6 +38,25 @@ export const getAllGames = () => {
   return query.find();
 };
 
+// UPDATE operation - update games
+export const updateGame = async (id, title, player_x, player_o, board) => {
+  let Game = new Parse.Object("Game");
+  Game.set('objectId', id);
+  Game.set('Title', title);
+  Game.set('Player_x', player_x);
+  Game.set('Player_y', player_o);
+  Game.set('board', board);
+  try {
+    await Game.save();
+    alert('Success! Game updated!');
+    window.location.reload();
+    return true;
+  } catch (error) {
+    alert(`Error! ${error.message}`);
+    return false;
+  }
+};
+
 // DELETE operation - remove game by ID
 export const removeGame = async (id) => {
   const Game = new Parse.Object("Game");
@@ -51,4 +70,4 @@ export const removeGame = async (id) => {
     alert(`Error ${error.message}`);
     return false;
   }
-}
+};

@@ -68,3 +68,18 @@ p {
 #edit-button {
   margin-left: 50px;
 }
+
+.editform {
+  margin-top: 30px;
+}
+
+.boardgrid {
+  margin-top: 5px;
+  margin-left: 85px;
+}
+
+#save {
+  margin-top: 5px;
+  margin-left: 125px;
+  margin-bottom: 10px;
+}

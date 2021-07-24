@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getAllGames} from "../../Services/LearnService.js"; //, getById, createGame, removeGame
+import React, { useEffect, useState } from "react"
+import { getAllGames} from "../../Services/LearnService.js" //, getById, createGame, removeGame
 import { ViewSelectorMapper } from "./ViewSelectorMapper.js"
 import { Link } from "react-router-dom"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
@@ -8,12 +8,10 @@ import '../../Styling/ViewSelector.css'
 
 const ViewSelector = () => {
   const [games, setGames] = useState([]);
-  const [numGames, setNumGames] = useState();
 
   useEffect(() => {
     getAllGames().then((games) => {
       setGames(games);
-      setNumGames(games.length);
     });
   }, []);
 
