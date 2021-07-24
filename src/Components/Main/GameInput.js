@@ -44,12 +44,9 @@ const GameInput = () => {
   // useEffect will run when changes are made to the state variable
   useEffect(() => {
     if (newGame && add) {
-      createGame(newGame).then((newGame) => {
-        if (newGame) {
-          alert(`${newGame.Title} has been successfully saved!`)
-        }
-        setAdd(false)
-      });
+      createGame(newGame)
+      alert(`${newGame.Title} has been successfully saved!`)
+      setAdd(false)
     }
   },[newGame, add]);
 
