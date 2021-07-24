@@ -1,4 +1,4 @@
-import Parse from "parse";
+import Parse from "parse"
 
 // CREATE operation - new game
 export const createGame = (Name) => {

@@ -1,5 +1,5 @@
-import React from "react";
-import { Redirect} from "react-router-dom";
+import React from "react"
+import { Redirect} from "react-router-dom"
 
 // This Service redirects the user to the main landing page when they attept to
 // visit one of the authentication pages after logging in.

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 // Selector Mapper for ViewSelector
 // dynamically builds form from database passed in

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import Parse from "parse"
 import ProtectedRoute from "../../Services/ProtectedRoutes"
 import LogoutService from "./../../Services/LogoutService"

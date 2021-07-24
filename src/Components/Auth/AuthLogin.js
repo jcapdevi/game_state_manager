@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import { Redirect } from "react-router-dom"
-import { loginUser } from "./AuthService";
-import AuthForm from "./AuthForm";
+import { loginUser } from "./AuthService"
+import AuthForm from "./AuthForm"
 import Parse from "parse"
 import LoggedIn from "../../Services/LoggedIn"
 

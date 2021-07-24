@@ -1,4 +1,4 @@
-import Parse from "parse";
+import Parse from "parse"
 
 // This service provides wrappers for the parse methods for creating a user and logging in
 

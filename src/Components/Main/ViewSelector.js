@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getAllGames, getById } from "../../Services/DataService.js";
+import React, { useEffect, useState } from "react"
+import { getAllGames, getById } from "../../Services/DataService.js"
 import ViewSelectorMapper from "./Subcomponents/ViewSelectorMapper"
 import DisplaySelection from "./Subcomponents/DisplaySelection"
 import { Link } from "react-router-dom"
