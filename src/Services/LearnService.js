@@ -1,13 +1,22 @@
 import Parse from "parse";
 
 // CREATE operation - new game
-export const createGame = (Name) => {
-  console.log("Creating: ", Name);
-  const Game = Parse.Object.extend("Game");
-  const game = new Game();
-  // using setter to UPDATE the (local) object
-  game.set("name", Name);
-  return game.save();
+export const createGame = async (title, template, player_x, player_o, board) => {
+  var Game = new Parse.Object("Game");
+  Game.set('Title', title);
+  Game.set('Template', template);
+  Game.set('Player_x', player_x);
+  Game.set('Player_y', player_o);
+  Game.set('board', board);
+  try {
+    await Game.save();
+    alert('Success! Game saved!');
+    window.location.reload();
+    return true;
+  } catch (error) {
+    alert(`Error! ${error.message}`);
+    return false;
+  }
 };
 
 // READ operation - get game by ID

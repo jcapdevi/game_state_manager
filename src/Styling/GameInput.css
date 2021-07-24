@@ -1,0 +1,35 @@
+#savegame {
+  width: 400px;
+  margin-top: -5px;
+  margin-left: 30%;
+  border-bottom: 2px solid #023e8a;
+}
+
+#labeltitle {
+  margin-left: 50px;
+}
+
+#labelplayerx {
+  margin-left: 50px;
+}
+
+#labelplayery {
+  margin-left: 50px;
+}
+
+#prompt {
+  text-align: center;
+  margin-left: -45px;
+  width: 500px;
+}
+
+.boardgridsave {
+  margin-top: 5px;
+  margin-left: 135px;
+}
+
+#savesubmit {
+  margin-top: 20px;
+  margin-left: 175px;
+  margin-bottom: 20px;
+}

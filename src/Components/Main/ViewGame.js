@@ -104,23 +104,24 @@ const ViewGame = ({ id }) => {
         <div class="editform">
           <form id="form" onSubmit={handleSubmit}>
             <label htmlFor="title"><strong>Edit Title: </strong></label>
-            <input type="text" id="title" name="title" defaultValue={games[1]}  onChange={handleChange}/><br />
+            <input type="text" id="player-o" name="player-o" onChange={handleChange} maxLength="15" />
+            <input type="text" id="title" name="title" defaultValue={games[1]}  onChange={handleChange} maxLength="15" /><br />
             <label htmlFor="player_x"><strong>Edit Player X: </strong></label>
-            <input type="text" id="player_x" name="player_x" defaultValue={games[2]} onChange={handleChange}/><br />
+            <input type="text" id="player_x" name="player_x" defaultValue={games[2]} onChange={handleChange} maxLength="15" /><br />
             <label htmlFor="player_y"><strong>Edit Player O: </strong></label>
-            <input type="text" id="player_y" name="player_o" defaultValue={games[3]} onChange={handleChange}/><br />
+            <input type="text" id="player_y" name="player_o" defaultValue={games[3]} onChange={handleChange} maxLength="15" /><br />
             <div class="boardgrid">
-              <input type="text" id="s0" name="s0" maxLength="1" size="1" defaultValue={board[0]} onChange={handleChange}/>
-              <input type="text" id="s1" name="s1" maxLength="1" size="1" defaultValue={board[1]} onChange={handleChange}/>
-              <input type="text" id="s2" name="s2" maxLength="1" size="1" defaultValue={board[2]} onChange={handleChange}/>
+              <input type="text" id="s0" name="s0" maxLength="1" size="1" defaultValue={board[0]} onChange={handleChange} />
+              <input type="text" id="s1" name="s1" maxLength="1" size="1" defaultValue={board[1]} onChange={handleChange} />
+              <input type="text" id="s2" name="s2" maxLength="1" size="1" defaultValue={board[2]} onChange={handleChange} />
               <br />
-              <input type="text" id="s3" name="s3" maxLength="1" size="1" defaultValue={board[3]} onChange={handleChange}/>
-              <input type="text" id="s4" name="s4" maxLength="1" size="1" defaultValue={board[4]} onChange={handleChange}/>
-              <input type="text" id="s5" name="s5" maxLength="1" size="1" defaultValue={board[5]} onChange={handleChange}/>
+              <input type="text" id="s3" name="s3" maxLength="1" size="1" defaultValue={board[3]} onChange={handleChange} />
+              <input type="text" id="s4" name="s4" maxLength="1" size="1" defaultValue={board[4]} onChange={handleChange} />
+              <input type="text" id="s5" name="s5" maxLength="1" size="1" defaultValue={board[5]} onChange={handleChange} />
               <br />
-              <input type="text" id="s6" name="s6" maxLength="1" size="1" defaultValue={board[6]} onChange={handleChange}/>
-              <input type="text" id="s7" name="s7" maxLength="1" size="1" defaultValue={board[7]} onChange={handleChange}/>
-              <input type="text" id="s8" name="s8" maxLength="1" size="1" defaultValue={board[8]} onChange={handleChange}/>
+              <input type="text" id="s6" name="s6" maxLength="1" size="1" defaultValue={board[6]} onChange={handleChange} />
+              <input type="text" id="s7" name="s7" maxLength="1" size="1" defaultValue={board[7]} onChange={handleChange} />
+              <input type="text" id="s8" name="s8" maxLength="1" size="1" defaultValue={board[8]} onChange={handleChange} />
               <br />
             </div>
             <button id="save">Save!</button>

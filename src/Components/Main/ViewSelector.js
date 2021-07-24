@@ -29,8 +29,7 @@ const ViewSelector = () => {
       <h1>View Saved Games</h1>
       <p id="desc">Choose a saved game from the drop down menu to view it.</p>
       <ViewSelectorMapper options={games}/>
-      <br /><br />
-      <br /><br />
+      <br />
       <Link to="/GameInput">
         <p>Save a Game</p>
       </Link>
